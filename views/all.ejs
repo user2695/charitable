@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation drive details</title>
+</head>
+<body>
+    <h1>Current Drives</h1>
+    <div class="details">
+        
+        <% posts.map((post)=>{ %> 
+            <div class="donation-card">
+                <p><%= post.img %> </p>
+                <p><%= post.title %> </p>
+                <p><%= post.desc %> </p>
+                <p>Funds target : <%= post.amount %> </p>
+                <div class="buttons">
+                    <button class="registerBtn">Share</button>
+                    <button class="registerBtn">Donate</button>
+                </div>
+            </div>
+            
+            <% }) %> 
+
+        
+       
+    </div>
+</body>
+<style>
+    h1{
+        text-align: center;
+    }
+    .details{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+       
+    .donation-card{
+        
+        border: solid 1px red;
+        text-align: center;
+        background-color: white;
+        width: 25%;
+        margin: auto;
+        margin-top: 5%;
+        border-radius: 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+    }
+    button{
+    margin-top: 3%;
+    border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+</style>
+</html>

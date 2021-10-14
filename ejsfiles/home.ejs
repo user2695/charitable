@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+  <%- include('partials/nav') %> 
+  <h1><b>Recent Uploads</b><br></h1><br><br>
+  <% posts.forEach(function(post){ %>
+    <div class="container">
+      
+    <h1><%=post.name%></h1><i class="material-icons" style="font-size:48px;color:red">delete_sweep</i><br><br>
+    <p>
+    <%=post.text%>
+    <a href="/posts/<%=post._id%>"></a>
+    <button type="submit" class="loginbtn btn"><h3>Endorse</h3></button>  
+
+  </div></p><br><br>
+
+    <% }) %>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel= "stylesheet" href= "styles/register.css">
+</head>
+<body>
+  <%- include('partials/nav') %> 
+<form action="/create" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <h1>Charitable</h1> <br>
+    
+    <p>Fill the details to start the fundraiser</p>
+    <hr>
+    <label for="amount"><b>How much do you want to raise?</b></label>
+    <input type="number" placeholder="amount"  name="amount" id="amount" required>
+    <br/>
+    <br />
+
+    <label for="relation"><b>Whom are you rasing funds for?</b></label>
+    <input type="text" placeholder="myself" name="relation" id="relation">
+
+    <label for="reason"><b>Describe your reason?</b></label>
+    <input type="reason" placeholder="for childrens education" name="reason" id="reason" required>
+    <br />
+    <label for="title"><b>Title</b></label>
+    <input type="title" placeholder="for childrens education" name="title" id="title" required>
+    <br />
+    <label for="desc"><b>Description</b></label>
+    <input type="desc" placeholder="for childrens education" name="desc" id="desc" required>
+    <br />
+    <label for="image"><b>image</b></label>
+    <input type="file" placeholder="for childrens education" name="image" id="image" required>
+    <br />
+
+    <!-- <label for="relation"><b>Whom are you rasing funds for?</b></label>
+    <input type="text" placeholder="myself" name="relation" id="relation">
+
+    <label for="relation"><b>Whom are you rasing funds for?</b></label>
+    <input type="text" placeholder="myself" name="relation" id="relation"> -->
+    
+    <p>By submitting you agree to our <a href="#">Terms & Privacy</a></p>
+    <button type="submit" class="registerbtn btn" ><h3>Create</h3></button>
+
+    <h3>Already have an account? <a href="/login">Login</a></h3>
+    </div>
+
+  
+</form>
+</body>
+</html>
