@@ -1,12 +1,10 @@
-*{
+/* *{
   margin: 0;
-}
+  padding: 0;
+} */
 body{
    background-size: cover;
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-h1{
-  color: #04AA6D;
 }
 
 .container{
@@ -37,18 +35,29 @@ h4{
 }
 
 .header{
-    
     width: 70%;
+    text-align: left;
 }
+
+.header h1{
+  color: #04AA6D;
+  text-align: left;
+}
+
+
 .registerBtn{
    margin-top: 1.5em;
     border-radius: 30px;
-    color: black;
-    background-color: whitesmoke;
+    color: whitesmoke;
+    background-color: rgba(0, 128, 128, 0.925);
     padding: 27px;
     border-style: none;
-    
 }
+
+.header .registerBtn{
+  margin-left: 20%;
+}
+
 a{
   text-decoration: none;
   color: black;
@@ -56,10 +65,9 @@ a{
 
 .registerBtn:hover{
     border-radius: 30px;
-    color: whitesmoke;
-    background-color: rgba(0, 128, 128, 0.925);
     padding: 27px;
     transform: translateY(-1px);
+    box-shadow: black 5px 5px 5px;
     
 }
 
@@ -74,7 +82,6 @@ a{
         
     }
     .header{
-        
         margin-top: 10%;
         padding-left: 50px;
         

@@ -30,27 +30,6 @@ router.post("/registerUser", async (req, res) => {
   }
 });
 
-// router.post('/registerUser', async (req, res) => {
-//   // First Validate The Request
-
-//   // Check if this user already exisits
-//   let user = await User.findOne({ email: req.body.email });
-//   if (user) {
-//       return res.status(400).send('That user already exisits!');
-//   } else {
-//       // Insert the new user if they do not exist yet
-//       user = new User({
-//           name: req.body.name,
-//           email: req.body.email,
-//           password: req.body.password,
-//           endorser: req.body.endorser
-//       });
-//       await user.save();
-//       res.send(user);
-//   }
-// });
-
-
 //LOGIN
 router.post("/login", async (req, res) => {
   try {
