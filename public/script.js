@@ -9,30 +9,25 @@ function myFunction() {
     } else {
       x.className = "right-nav";
     }
-  }
-
+}
     
   //delete script
-      console.log("connected")
-      const del = document.querySelector('a.delete')
-      del.addEventListener('click', (e) => {
-          e.preventDefault()
-          console.log('asdasdas')
-          const endpoint = `/${del.dataset.doc}`
-  
-          fetch(endpoint, {
-              method: 'DELETE'
-          })
-          
+  console.log("connected")
+  const del = document.querySelector('a.delete')
+  del.addEventListener('click', (e) => {
+      e.preventDefault()
+      console.log('asdasdas')
+      const endpoint = `/${del.dataset.doc}`
+
+      fetch(endpoint, {
+          method: 'DELETE'
       })
+      .then((response)=> response.json())
+      .then(data => window.location.href = data.redirect)
+
+      .catch((err)=> console.log(err) )
+  })
   
-
-
-
-
-
-
-
  // Function to delete a note
 // function deleteNote(index) {
 

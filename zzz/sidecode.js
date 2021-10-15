@@ -16,6 +16,13 @@
 
 
 //delete a post
+router.delete("/:id", (req, res) => {
+    const post = Post.findById(req.param.id)
+    .then((result)=>{
+        post.deleteOne();
+    })
+    .err((err=> console.log(err)))
+})
 
 // router.delete("/:id", async (req, res) => {
 //   try {

@@ -23,12 +23,9 @@
                     <button class="registerBtn">Share</button>
                     <button class="registerBtn">Donate</button>
                 </div>
-               <a class="delete" data-doc="<%= post._id %>">Delete </a>
-            </div> 
-            
-          
+                <a class="delete" data-doc="<%= post._id %>"><button class="registerBtn del"> Delete </button></a>
+            </div>  
     </div>
-
 
 <style>
   h1{
@@ -58,8 +55,16 @@
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
                   0 10px 10px rgba(0,0,0,0.22);
   }
-  
-  
+
+.del{
+  margin-bottom: 5%;
+}
+.registerBtn:hover{
+  color: black;
+  transform: translateY(-1px);
+  box-shadow: black 5px 5px 5px;
+
+}
   .buttons{
       display: flex;
       justify-content: center;
