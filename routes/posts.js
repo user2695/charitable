@@ -41,12 +41,20 @@ router.get('/', (req, res) => {
   .catch((err)=> console.log(err,"found error"))
 })
 
+// //delete a post
+// router.delete("/:id", (req, res) => {
+//   const post = Post.findByIdAndDelete(req.param.id)
+//   .then((result)=>{
+//       console.log("post deleted")
+//   })
+//   .err((err=> console.log(err)))
+// })
 
 //DELETE POST
 router.delete("/:id", (req, res) => {
 
   const id = req.params.id
-  Blog.findByIdAndDelete(id)
+  Post.findByIdAndDelete(id)
     .then((result) => {
         res.json({redirect: '/'})
     })

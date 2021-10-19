@@ -2,12 +2,19 @@ const express = require('express');
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const popup = require("node-popup")
 
 //REGISTER
 router.post("/registerUser", async (req, res) => {
   try {
     console.log("in try block");
-
+    user = await User.findOne({ email: req.body.email });
+    
+    if(user){
+      res.status(500).json("email already in use");
+    }
+    else{
+      console.log('ran through')
     //generate new password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -23,6 +30,8 @@ router.post("/registerUser", async (req, res) => {
     const user = await newUser.save();
     res.render("login");
     // res.status(200).json(user);
+    }
+    
   } catch (err) {
     console.log("post user error")
     res.status(500).json(err)
