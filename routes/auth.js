@@ -1,6 +1,7 @@
 const express = require('express');
 const router = require("express").Router();
 const User = require("../models/User");
+const Admin = require("../models/Admin");
 const bcrypt = require("bcrypt");
 const popup = require("node-popup")
 
@@ -39,7 +40,7 @@ router.post("/registerUser", async (req, res) => {
   }
 });
 
-//LOGIN
+//USER LOGIN
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -53,5 +54,27 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err)
   }
 });
+
+//Admin Login
+
+router.post("/admin-login" , async(req,res) => {
+    try {
+     
+      const user = await User.findOne({email:req.body.email})
+      
+      console.log(email,req.body.email)
+      // !admin && res.status(404).json("user not found")
+      if(user){
+        console.log("admin found")
+        res.render("index")
+      }
+      else{
+        res.status(404).json("user not found")
+      }
+
+    } catch (error) {
+      res.status(500).json(error)
+    }
+})
 
 module.exports = router;

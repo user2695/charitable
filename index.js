@@ -34,10 +34,11 @@ app.use(mainRoutes)
 app.use(authRoute);
 app.use(userRoute);
 app.use(postRoute);
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 
 
 
-app.listen(8800, () => {
+app.listen(3000, () => {
   console.log("Backend server is running!");
 });
